@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0-experimental",
+  "version": "1.1.1-experimental",
   "windows_native_ui": "passed",
   "fresh_zip_ui_and_relative_root": "passed",
   "default_output_setting_save_cancel_restart": "passed",
@@ -28,5 +28,7 @@
     }
   ],
   "full_4k_export_tested": false,
-  "fresh_machine_gpu_install_tested": false
+  "fresh_machine_gpu_install_tested": false,
+  "fresh_deflicker_source_model_download_and_checks": "passed",
+  "inference_algorithm_unchanged_since_export_validation": true
 }

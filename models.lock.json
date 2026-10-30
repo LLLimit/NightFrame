@@ -53,7 +53,6 @@
   ],
   "rife": {
     "url": "https://github.com/nihui/rife-ncnn-vulkan/releases/download/20221029/rife-ncnn-vulkan-20221029-windows.zip",
-    "sha256": "e59a3749785b044704cc815f9fe443094cf5ad3cf31eda1095ccecbf357cc35c",
     "files": [
       {
         "path": "LICENSE",
@@ -75,6 +74,8 @@
         "path": "vcomp140.dll",
         "sha256": "54fe6b087528b33c2969143d811eb62f1bd49071d37de9db0745fc079764d698"
       }
-    ]
+    ],
+    "verification": "Only pinned entries of the official HTTPS release ZIP are fetched by byte ranges; each installed file is CRC- and SHA256-verified.",
+    "archive_bytes": 431540241
   }
 }

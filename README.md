@@ -19,7 +19,7 @@
 
 https://github.com/user-attachments/assets/5335d3e5-3de6-41d7-9d73-1aef4359098c
 
-[打开原始对照视频](https://github.com/LLLimit/NightFrame/releases/download/v1.1.0-experimental/NightFrame_comparison_original.mp4)
+[打开原始对照视频](https://github.com/LLLimit/NightFrame/releases/download/v1.1.1-experimental/NightFrame_comparison_original.mp4)
 
 <details>
 <summary>GIF 预览（静音）</summary>

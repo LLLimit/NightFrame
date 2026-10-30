@@ -34,7 +34,7 @@ class Controller:
   except Exception:pass
   models={'3b':(ROOT/'research/seedvr2-models/seedvr2_ema_3b_fp8_e4m3fn.safetensors').is_file(),'sharp7b':(ROOT/'research/seedvr2-models/seedvr2_ema_7b_sharp-Q4_K_M.gguf').is_file(),'vae':(ROOT/'research/seedvr2-models/ema_vae_fp16.safetensors').is_file(),'deflicker':(ROOT/'research/Flickerformer/Flickerformer.pth').is_file() and (ROOT/'research/RIFE/rife-ncnn-vulkan.exe').is_file()}
   models['motion']=models['deflicker'] and (ROOT/'research/SEA-RAFT/core/raft.py').is_file() and (ROOT/'research/sea-raft-models/spring-M.safetensors').is_file()
-  return {'gpu':gpu,'models':models,'runtime':gpu_python().is_file(),'home':str(ROOT),'version':'1.1.0-experimental'}
+  return {'gpu':gpu,'models':models,'runtime':gpu_python().is_file(),'home':str(ROOT),'version':'1.1.1-experimental'}
  def _save_settings(self):
   if not self.testing:write_json(self.settings_path,self.settings)
  def snapshot(self,source_revision=0):
