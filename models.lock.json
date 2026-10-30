@@ -1,0 +1,80 @@
+{
+  "sources": [
+    {
+      "feature": "deflicker",
+      "repository": "qulishen/Flickerformer",
+      "revision": "56f2bef4a0455002fc75dd355bed3c0985fdfa4c",
+      "directory": "research/Flickerformer"
+    },
+    {
+      "feature": "deflicker",
+      "repository": "princeton-vl/SEA-RAFT",
+      "revision": "9137517ba24e628442aec097d3afe71d03503b75",
+      "directory": "research/SEA-RAFT"
+    },
+    {
+      "feature": "quality",
+      "repository": "numz/ComfyUI-SeedVR2_VideoUpscaler",
+      "revision": "4490bd1f482e026674543386bb2a4d176da245b9",
+      "directory": "research/SeedVR2"
+    }
+  ],
+  "models": [
+    {
+      "feature": "deflicker",
+      "path": "research/Flickerformer/Flickerformer.pth",
+      "sha256": "9d2ee9afe323a767095e576da138600cfca7e3e0ce681e3c440af82e8b4b7a1d",
+      "url": "https://raw.githubusercontent.com/qulishen/Flickerformer/56f2bef4a0455002fc75dd355bed3c0985fdfa4c/Flickerformer.pth"
+    },
+    {
+      "feature": "deflicker",
+      "path": "research/sea-raft-models/spring-M.safetensors",
+      "sha256": "cb8cfbf14c5e0f6734b64add383708b7ff68cc6089a0007c67165d4761346102",
+      "url": "https://huggingface.co/MemorySlices/Tartan-C-T-TSKH-spring540x960-M/resolve/eb97ef34ba5d856c3fa2cdcd073150c057ac8b69/model.safetensors"
+    },
+    {
+      "feature": "quality",
+      "path": "research/seedvr2-models/seedvr2_ema_3b_fp8_e4m3fn.safetensors",
+      "sha256": "3bf1e43ebedd570e7e7a0b1b60d6a02e105978f505c8128a241cde99a8240cff",
+      "url": "https://huggingface.co/numz/SeedVR2_comfyUI/resolve/09ced71023636e9bc8cdf9cdecfb2625d1e691e8/seedvr2_ema_3b_fp8_e4m3fn.safetensors"
+    },
+    {
+      "feature": "quality",
+      "path": "research/seedvr2-models/ema_vae_fp16.safetensors",
+      "sha256": "20678548f420d98d26f11442d3528f8b8c94e57ee046ef93dbb7633da8612ca1",
+      "url": "https://huggingface.co/numz/SeedVR2_comfyUI/resolve/09ced71023636e9bc8cdf9cdecfb2625d1e691e8/ema_vae_fp16.safetensors"
+    },
+    {
+      "feature": "quality",
+      "path": "research/seedvr2-models/seedvr2_ema_7b_sharp-Q4_K_M.gguf",
+      "sha256": "7aed800ac4eb8e0d18569a954c0ff35f5a1caa3ed5d920e66cc31405f75b6e69",
+      "url": "https://huggingface.co/AInVFX/SeedVR2_comfyUI/resolve/ac66d6d98fa49975d893b58c55bff7677191c862/seedvr2_ema_7b_sharp-Q4_K_M.gguf"
+    }
+  ],
+  "rife": {
+    "url": "https://github.com/nihui/rife-ncnn-vulkan/releases/download/20221029/rife-ncnn-vulkan-20221029-windows.zip",
+    "sha256": "e59a3749785b044704cc815f9fe443094cf5ad3cf31eda1095ccecbf357cc35c",
+    "files": [
+      {
+        "path": "LICENSE",
+        "sha256": "de18cbedb0c3b0d1eeb9ccac3988cdf69c21fa89039cd97dd8846cb68f661f81"
+      },
+      {
+        "path": "rife-ncnn-vulkan.exe",
+        "sha256": "4b970319db2814c82b15fceed8193151560a676a9eb63f20d4877be77b98f44f"
+      },
+      {
+        "path": "rife-v4.6/flownet.bin",
+        "sha256": "f334ed2260149ce0188a6dcf049844e8b0cdd912e01cbcfb63553157d2508958"
+      },
+      {
+        "path": "rife-v4.6/flownet.param",
+        "sha256": "28df14d57a225725ee5386f52eba422488450d37c9f40800ed4f62e8ba846692"
+      },
+      {
+        "path": "vcomp140.dll",
+        "sha256": "54fe6b087528b33c2969143d811eb62f1bd49071d37de9db0745fc079764d698"
+      }
+    ]
+  }
+}

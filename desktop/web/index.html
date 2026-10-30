@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>NightFrame灯光闪烁修复</title><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="compact.css"></head>
+<body>
+<svg class="symbols" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="i-wave" viewBox="0 0 24 24"><path d="M3 12h3l3-7 4 14 3-7h5"/></symbol>
+<symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.3 6.7L21 12l-6.7 2.3L12 21l-2.3-6.7L3 12l6.7-2.3Z"/><path d="M20 2v4m-2-2h4"/></symbol>
+<symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10H3Z"/><path d="M3 11h18"/></symbol>
+<symbol id="i-file" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6Z"/><path d="M14 3v5h4M9 12h6m-6 4h6"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7Z"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></symbol>
+<symbol id="i-chip" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="3"/><path d="M9 2v4m6-4v4M9 18v4m6-4v4M2 9h4m-4 6h4m12-6h4m-4 6h4M10 10h4v4h-4Z"/></symbol>
+<symbol id="i-log" viewBox="0 0 24 24"><path d="m4 7 4 4-4 4m7 1h9M3 3h18v18H3Z"/></symbol>
+<symbol id="i-stop" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><path d="m8 4 8 8-8 8"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.3 15.1A8.8 8.8 0 0 1 8.9 3.7 9 9 0 1 0 20.3 15.1Z"/></symbol>
+<symbol id="i-settings" viewBox="0 0 24 24"><path d="m9 3-.7 2.5-2.4 1-2.3-.7L2 9l1.8 1.8v2.4L2 15l1.6 3.2 2.3-.7 2.4 1L9 21h6l.7-2.5 2.4-1 2.3.7L22 15l-1.8-1.8v-2.4L22 9l-1.6-3.2-2.3.7-2.4-1L15 3Z"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="i-min" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol><symbol id="i-max" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+</defs></svg>
+<div class="app">
+ <aside class="sidebar">
+  <div class="brand pywebview-drag-region"><div class="brand-mark"><svg><use href="#i-wave"/></svg></div><div><strong>NightFrame</strong><span>灯光闪烁修复</span></div></div>
+  <div class="side-label">视频工作台</div>
+  <nav aria-label="处理功能">
+   <button class="nav-item" data-mode="deflicker"><svg><use href="#i-wave"/></svg><span>去闪烁</span><span class="nav-dot"></span></button>
+   <button class="nav-item active" data-mode="quality"><svg><use href="#i-spark"/></svg><span>画质修复</span><span class="nav-dot"></span></button>
+  </nav>
+  <div class="side-note"><div class="side-note-line"></div><p>先让灯光稳定，<br>再让细节回来。</p></div>
+  <div class="sidebar-bottom"><button id="settingsButton" class="soft-button app-settings-button" aria-haspopup="dialog"><svg><use href="#i-settings"/></svg>设置</button><div class="engine-status"><div class="engine-status-icon"><svg><use href="#i-chip"/></svg></div><span><strong id="engineLabel">检查本地引擎</strong><small>视频始终留在本机</small></span><i id="engineDot"></i></div><button id="workFolder" class="text-button"><svg><use href="#i-folder"/></svg>打开导出文件夹</button><div class="version">NIGHTFRAME <span>1.1.0</span></div></div>
+ </aside>
+ <div class="workspace">
+  <div class="titlebar"><div class="pywebview-drag-region window-drag">EXPERIMENT ARCHIVE</div><div class="window-controls"><button aria-label="最小化" data-window="minimize"><svg><use href="#i-min"/></svg></button><button aria-label="最大化" data-window="maximize"><svg><use href="#i-max"/></svg></button><button aria-label="关闭" data-window="close"><svg><use href="#i-close"/></svg></button></div></div>
+  <main>
+   <header class="page-header"><div><div class="eyebrow">NIGHTFRAME / RESTORE</div><h1 id="pageTitle">画质修复<span class="heading-dot">.</span></h1><p id="pageSubtitle">让稳定的夜景，再清晰一点。</p></div><div class="header-actions"><button id="historyButton" class="soft-button small"><svg><use href="#i-clock"/></svg>最近任务</button><div class="local-pill"><i></i>本地 GPU 处理</div></div></header>
+   <div class="studio-grid">
+    <section class="source-card raised" aria-label="输入视频">
+     <div class="section-top"><span class="section-number">01</span><h2>输入视频</h2><button id="chooseVideo" class="soft-button small" data-setting><svg><use href="#i-plus"/></svg>选择视频</button></div>
+     <div id="preview" class="preview inset"><div id="emptyPreview" class="empty-preview"><div class="empty-icon"><svg><use href="#i-file"/></svg></div><strong>选择一段想修复的视频</strong><span>MP4、MOV、MKV 等常用格式</span></div><img id="poster" alt="所选视频的真实预览帧" hidden><button id="playSource" class="play-button" aria-label="播放所选视频" hidden><svg><use href="#i-play"/></svg></button><span id="previewBadge" class="preview-badge" hidden>输入画面</span></div>
+     <div class="source-info"><div class="file-emblem"><svg><use href="#i-file"/></svg></div><div class="source-name"><strong id="fileName">尚未选择视频</strong><span id="fileMeta">所有处理均在本机完成</span></div><span id="fileSize" class="file-size">—</span></div>
+     <div class="path-control inset"><svg><use href="#i-folder"/></svg><input id="inputPath" aria-label="输入视频路径" placeholder="也可以粘贴视频完整路径后按 Enter" autocomplete="off" spellcheck="false"><button id="applyPath" aria-label="载入路径"><svg><use href="#i-arrow"/></svg></button></div>
+     <div class="source-foot"><span><i class="tiny-dot"></i><span id="sourceHint">可直接选择去闪烁后的成片</span></span><span id="audioHint">—</span></div>
+    </section>
+    <section class="settings-card raised" aria-label="处理设置">
+     <div class="section-top"><span class="section-number">02</span><h2 id="settingsTitle">修复设置</h2><span class="quiet-caption">按需选择</span></div>
+     <div id="qualitySettings">
+      <label class="field-label">修复模型</label>
+      <div class="model-options" role="group" aria-label="画质修复模型">
+       <button class="model-option" data-model="3b" data-setting><span class="model-icon"><svg><use href="#i-spark"/></svg></span><span class="model-copy"><strong>SeedVR2 <em>3B</em></strong><small>更轻量，适合日常修复</small></span><span class="radio-mark"></span></button>
+       <button class="model-option selected" data-model="sharp7b" data-setting><span class="model-icon"><svg><use href="#i-spark"/></svg></span><span class="model-copy"><strong>7B Sharp <em>细节优先</em></strong><small>更丰富的纹理与清晰边缘</small></span><span class="radio-mark"></span></button>
+      </div>
+      <div class="field-row"><label class="field-label">输出画质</label><span class="mini-note" id="resolutionNote">保留原有画幅</span></div>
+      <div class="segmented inset" role="group" aria-label="输出画质"><button class="selected" data-width="1920" data-setting>1080p</button><button data-width="3840" data-setting>4K <small>较慢</small></button></div>
+      <p class="model-hint">以当前视频修复，允许重建纹理。</p>
+     </div>
+     <div id="deflickerSettings" hidden>
+      <label class="field-label">处理强度</label>
+      <div class="deflicker-options"><button data-strength="strong" class="strength-option selected" data-setting aria-pressed="true"><strong>强力 <span>去闪烁优先</span></strong><small>强力稳定灯光，运动画面可能产生虚影</small></button><button data-strength="motion" class="strength-option" data-setting aria-pressed="false"><strong>运动保护 <span>运动优先</span></strong><small>保留原始时刻，可能残留部分频闪</small></button></div>
+      <div class="output-spec inset"><svg><use href="#i-wave"/></svg><span>最高 1080p<span>30 fps 流畅输出</span></span></div>
+      <p class="model-hint" id="deflickerHint">强力模式优先压住频闪，运动区域可能有虚影。</p>
+     </div>
+     <div class="output-field"><div class="field-row"><label class="field-label">默认导出位置</label><span class="audio-toggle"><input id="keepAudio" type="checkbox" checked data-setting><label for="keepAudio">保留音轨</label></span></div><button id="chooseOutput" class="folder-control inset" data-setting><svg><use href="#i-folder"/></svg><span id="outputPath">加载导出位置…</span><svg class="chevron"><use href="#i-chevron"/></svg></button></div>
+     <div class="action-row"><button id="previewButton" class="soft-button preview-action" data-setting><svg><use href="#i-play"/></svg>试处理 2 秒</button><button id="startButton" class="primary-button" data-setting><span id="startLabel">开始修复</span><svg><use href="#i-arrow"/></svg></button><button id="stopButton" class="stop-button soft-button" hidden><svg><use href="#i-stop"/></svg>停止处理</button></div>
+     <details class="advanced"><summary>试处理选项<span>+</span></summary><div><label for="previewStart">起点</label><div class="number-input inset"><input id="previewStart" type="number" min="0" step="0.1" value="0" data-setting><span>秒</span></div><small>从此处截取最多 2 秒进行试处理。</small></div></details>
+    </section>
+    <section class="progress-card raised" aria-label="处理进度" aria-live="polite">
+     <div class="progress-heading"><div class="progress-symbol"><svg><use href="#i-moon"/></svg></div><div><strong id="jobMessage">准备就绪</strong><span id="jobDescription">选择视频与模型，开始你的夜景修复。</span></div><div class="progress-numbers"><strong id="progressPercent">0<span>%</span></strong><span id="elapsed">等待开始</span></div></div>
+     <div class="progress-track inset"><div id="progressFill"></div></div>
+     <div class="progress-bottom"><div class="steps"><span data-phase="prepare"><i>1</i>准备画面</span><span data-phase="model"><i>2</i>模型处理</span><span data-phase="export"><i>3</i>导出验证</span><span data-phase="done"><i>4</i>完成</span></div><div id="resultActions" hidden><button id="useResult" class="text-button">继续画质修复<svg><use href="#i-arrow"/></svg></button><button id="openResult" class="soft-button small"><svg><use href="#i-play"/></svg>查看成片</button></div><button id="logToggle" class="text-button"><svg><use href="#i-log"/></svg>处理日志</button></div>
+     <pre id="logs" hidden></pre>
+    </section>
+   </div>
+   <footer class="page-footer"><span id="gpuName">正在检查本机环境…</span><span>模型与缓存保存在项目目录 <i>·</i> 原文件不会覆盖</span></footer>
+  </main>
+ </div>
+</div>
+<div id="toast" role="alert" hidden></div>
+<div id="historyOverlay" class="overlay" hidden><section class="history-panel raised"><div class="section-top"><h2>最近任务</h2><button id="closeHistory" class="icon-button" aria-label="关闭最近任务"><svg><use href="#i-close"/></svg></button></div><div id="historyList"></div></section></div>
+<div id="settingsOverlay" class="overlay settings-overlay" hidden><section class="preferences-panel raised" role="dialog" aria-modal="true" aria-labelledby="preferencesTitle" aria-describedby="preferencesHint"><div class="section-top"><div class="preferences-icon inset"><svg><use href="#i-settings"/></svg></div><h2 id="preferencesTitle">设置</h2><button id="closeSettings" class="icon-button" aria-label="关闭设置"><svg><use href="#i-close"/></svg></button></div><label for="defaultOutputPath" class="field-label">默认导出位置</label><p id="preferencesHint" class="preferences-hint">去闪烁、画质修复和试处理的成片都会导出到这里。</p><div class="preferences-path inset"><svg><use href="#i-folder"/></svg><input id="defaultOutputPath" placeholder="选择文件夹或粘贴完整路径" autocomplete="off" spellcheck="false"><button id="browseDefaultOutput" class="soft-button small">浏览</button></div><p class="preferences-note">保存后自动记住，下次启动继续使用。正在处理的任务仍使用原导出位置。</p><p id="settingsStatus" class="preferences-status" role="status"></p><div class="preferences-actions"><button id="cancelSettings" class="soft-button">取消</button><button id="saveSettings" class="primary-button"><svg><use href="#i-check"/></svg>保存设置</button></div></section></div>
+<script src="app.js"></script></body></html>
