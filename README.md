@@ -17,7 +17,8 @@
 
 左侧 **SOURCE：原片**，中间 **STRONG：强力**，右侧 **MOTION：运动保护**。下半屏是对应局部放大。包含道路、公交电子屏、背景灯光和快速运动桥梁四段，共 8.3 秒。
 
-<!-- NATIVE_VIDEO -->
+https://github.com/user-attachments/assets/5335d3e5-3de6-41d7-9d73-1aef4359098c
+
 [打开原始对照视频](https://github.com/LLLimit/NightFrame/releases/download/v1.1.0-experimental/NightFrame_comparison_original.mp4)
 
 <details>

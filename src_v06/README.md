@@ -22,15 +22,15 @@
 
 ## 环境与复现
 
-仍使用 F 盘的 `work/research_env`。新增 `research/SEA-RAFT` 和 `research/sea-raft-models`；来源、固定版本与权重哈希见后者的 `source_manifest.json`。没有修改外部 Python 环境。
+使用项目目录中的 `work/research_env`。新增 `research/SEA-RAFT` 和 `research/sea-raft-models`；来源、固定版本与权重哈希见后者的 `source_manifest.json`。没有修改外部 Python 环境。
 
 输入必须已转为 SDR、恒定 30 fps、至多 1920×1080，且 Flickerformer 先验与其尺寸、帧数相同：
 
 ```powershell
-& F:\VideoDeflicker\work\research_env\Scripts\python.exe F:\VideoDeflicker\src_v06\motion_deflicker.py source_cfr.mp4 flickerformer_prior.mp4 new_output.mp4
+& .\work\research_env\Scripts\python.exe .\src_v06\motion_deflicker.py source_cfr.mp4 flickerformer_prior.mp4 new_output.mp4
 ```
 
-该研究命令会覆盖同名实验输出；禁止把输出设为源片或先验文件。原片 `F:\MP\VID_20260930_192007_8K.mp4` 未修改。
+该研究命令会覆盖同名实验输出；禁止把输出设为源片或先验文件。App 不覆盖原始输入。
 
 ## 参考来源
 
